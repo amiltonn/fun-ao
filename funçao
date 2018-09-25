@@ -1,0 +1,75 @@
+menu.py
+# Somar dois números
+def somar():
+  num1=int(input("Qual o primeiro número? "))
+  num2 = int(input("Qual o segundo número? "))
+  s=num1+num2
+  print ("A soma de", num1, "mais", num2, "é", s)
+
+
+# Separar a palavra com "-"
+def separar():
+  palavra=input("Qual a palavra para separar? ")
+  tamanho=len(palavra)
+  separado=""
+  for i in range(tamanho-1):
+      separado=separado+palavra[i]+"-"
+  # Pegar o último caractere
+  separado = separado + palavra[tamanho-1]
+  print(palavra, "separada é", separado)
+
+# Iniciais maiúsculas
+def iniciais():
+  frase=input("Qual a frase? ")
+  tamanho=len(frase)
+  if (tamanho>0):
+      ini = frase[0].upper()
+      for i in range(1, tamanho):
+          if (frase[i-1]==" "):
+              ini=ini+frase[i].upper()
+          else:
+              ini = ini + frase[i].lower()
+      print ("Frase:", frase)
+      print ("Iniciais maiusculas:", ini)
+
+# Quantidade de caracteres com e sem espaço
+def sem_espaco():
+   frase = input("Qual a frase? ")
+   tamanho = len(frase)
+   sesp=""
+   for i in range(tamanho):
+       if frase[i]!=" ":
+          sesp=sesp+frase[i]
+   tsesp=len(sesp)
+   print ("Frase:", frase)
+   print ("Tamanho:", tamanho)
+   print ("Tamanho sem espaços:", tsesp)
+
+# Menu
+opcao=1
+while opcao!=9:
+  print ("-----------------------------------------------")
+  print ("MENU")
+  print ("1 - Somar")
+  print ("2 - Subtrair")
+  print ("3 - Multiplicar")
+  print ("4 - Dividir")
+  print ("-----------------------")
+  print ("5 - Separar")
+  print ("6 - Iníciais Maiúsculas")
+  print ("7 - Total de caracteres com e sem espaços")
+  print ("8 - Inverter")
+  print("------------------------")
+  print ("9 - Sair")
+  opcao=int(input("Qual a opção? "))
+  print("-----------------------------------------------")
+
+  if opcao==1:
+      somar()
+  elif opcao==5:
+      separar()
+  elif opcao==6:
+      iniciais()
+  elif opcao==7:
+      sem_espaco()
+
